@@ -1,7 +1,6 @@
 ﻿
 using DataAccess.Data;
 using DataAccess.Models;
-
 namespace MinimalAPI;
 
 public static class Api
@@ -16,6 +15,7 @@ public static class Api
 
         app.MapGet("/Users", GetUsers);
         app.MapGet("/Users/{id}", GetUser);
+        app.MapPost("/User", GetIdFromName);
         app.MapPost("/Users", InsertUser);
         app.MapPut("/Users", UpdateUser);
         app.MapDelete("/Users", DeleteUser);
@@ -99,4 +99,23 @@ public static class Api
             return Results.Problem(ex.Message);
         }
     }
+
+    private static async Task<IResult> GetIdFromName(UserModel user, IUserData data)
+    {
+        try
+        {
+            var results = await data.GetIdByName(user);
+            if (results == null)
+            {
+                return Results.NotFound();
+            }
+            return Results.Ok(results);
+        }
+        catch (Exception ex)
+        {
+
+            return Results.Problem(ex.Message);
+        }
+    }
+
 }

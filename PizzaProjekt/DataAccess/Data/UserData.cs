@@ -41,10 +41,10 @@ public class UserData : IUserData
     public Task DeleteUser(int ID) =>
         _db.SaveData("dbo.spUser_Delete", new { Id = ID });
 
-    public async Task<UserModel?> GetIdByName(string name)
+    public async Task<UserModel?> GetIdByName(UserModel user)
     {
         var results = await _db.LoadData<UserModel, dynamic>(
-            "dbo.spUser_GetIndexByName", new { Name = name }
+            "dbo.spUser_GetIndexByName", new { Name = user.Name }
             );
 
         return results.FirstOrDefault();

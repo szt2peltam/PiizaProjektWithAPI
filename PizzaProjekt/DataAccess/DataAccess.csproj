@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="DbAccess\" />
-    <Folder Include="Data\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -67,11 +67,14 @@
     <Build Include="dbo\storedProcedures\spUser_Delete.sql" />
     <Build Include="dbo\storedProcedures\spUser_Insert.sql" />
     <Build Include="dbo\storedProcedures\spUser_Update.sql" />
+    <Build Include="dbo\storedProcedures\spUser_GetIndexByName.sql" />
+    <Build Include="dbo\storedProcedures\spUser_GetPasswordFromIndex.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment1.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="UserDB.publish.xml" />
+    <None Include="UserDB2.publish.publish.xml" />
   </ItemGroup>
 </Project>
