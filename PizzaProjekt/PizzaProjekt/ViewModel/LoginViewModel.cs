@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PizzaProjekt.ViewModel
 {
-    internal class LoginViewModel
+    public class LoginViewModel
     {
     }
 }
