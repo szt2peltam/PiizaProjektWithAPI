@@ -2,7 +2,7 @@
 	@Name nvarchar(50)
 AS
 begin
-	SELECT Id,Name,Password
+	SELECT Id
 	FROM dbo.[User]
 	WHERE Name = @Name;
 end
