@@ -35,6 +35,10 @@
                 Click="Button_Click">
                 Bejelentkezés
         </Button>
+        <Button Click="ToRegisterPage"
+                Margin="0 10 0 0"
+                Width="200px"
+                >Nincs profilja?</Button>
 
         <TextBlock x:Name="ResponseText"></TextBlock>
     </StackPanel>

@@ -90,5 +90,12 @@ namespace PizzaProjekt.View
                 return false;
             }
         }
+
+        private async void ToRegisterPage(object sender, RoutedEventArgs e)
+        {
+            Register window = new Register();
+            this.Close();
+            window.Show();
+        }
     }
 }
