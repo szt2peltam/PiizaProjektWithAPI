@@ -15,8 +15,9 @@ public static class Api
 
         app.MapGet("/Users", GetUsers);
         app.MapGet("/Users/{id}", GetUser);
-        app.MapPost("/User", GetIdFromName);
         app.MapPost("/Users", InsertUser);
+        app.MapGet("/Password/{id}", GetPasswordFromId);
+        app.MapGet("/Name/{name}", GetIdFromName);
         app.MapPut("/Users", UpdateUser);
         app.MapDelete("/Users", DeleteUser);
 
@@ -100,12 +101,30 @@ public static class Api
         }
     }
 
-    private static async Task<IResult> GetIdFromName(UserModel user, IUserData data)
+    private static async Task<IResult> GetPasswordFromId(int id, IUserData data)
     {
         try
         {
-            var results = await data.GetIdByName(user);
-            if (results == null)
+            var results = await data.GetPasswordByIndex(id);
+            if(results == null)
+            {
+                return Results.NotFound();
+            }
+            return Results.Ok(results);
+        }
+        catch(Exception ex)
+        {
+            return Results.Problem(ex.Message);
+        }
+    }
+
+    private static async Task<IResult> GetIdFromName(string name, IUserData data)
+    {
+        try
+        {
+            var results = await data.GetIdByName(name);
+
+            if(results == null)
             {
                 return Results.NotFound();
             }
@@ -117,5 +136,4 @@ public static class Api
             return Results.Problem(ex.Message);
         }
     }
-
 }
