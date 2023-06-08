@@ -41,18 +41,18 @@ public class UserData : IUserData
     public Task DeleteUser(int ID) =>
         _db.SaveData("dbo.spUser_Delete", new { Id = ID });
 
-    public async Task<UserModel?> GetIdByName(string name)
+    public async Task<IdModel?> GetIdByName(string name)
     {
-        var results = await _db.LoadData<UserModel, dynamic>(
+        var results = await _db.LoadData<IdModel, dynamic>(
             "dbo.spUser_GetIndexByName", new { Name = name }
             );
 
         return results.FirstOrDefault();
     }
 
-    public async Task<UserModel?> GetPasswordByIndex(int index)
+    public async Task<PasswordModel?> GetPasswordByIndex(int index)
     {
-        var results = await _db.LoadData<UserModel, dynamic>(
+        var results = await _db.LoadData<PasswordModel, dynamic>(
             "dbo.spUser_GetPasswordFromIndex", new { Id = index });
 
         return results.FirstOrDefault();
