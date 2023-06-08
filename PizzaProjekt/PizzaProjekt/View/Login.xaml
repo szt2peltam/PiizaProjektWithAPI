@@ -6,30 +6,36 @@
         xmlns:local="clr-namespace:PizzaProjekt.View"
         mc:Ignorable="d"
         Title="Login" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"></RowDefinition>
-        </Grid.RowDefinitions>
+    <StackPanel>
         
         
         
-        <TextBlock Text="Felhasználónév: " Width="90px" Height="20px" Margin="160,98,550,316" ></TextBlock>
-        <TextBox Height="20px"
+        <TextBlock 
+                   Text="Felhasználónév: " 
+                   Width="90px" Height="20px"  ></TextBlock>
+        
+        
+        <TextBox   x:Name="Name"
+            Height="20px"
                  Width="300px"></TextBox>
-        <TextBlock Text="Jelszó:"
+        
+        <TextBlock  
+            Text="Jelszó:"
                    Width="50px"
-                   Height="20px" Margin="180,207,570,207"></TextBlock>
-        <TextBox Height="20px"
-                 Width="300px" Margin="255,98,245,316"
+                   Height="20px"></TextBlock>
+        <TextBox  
+            Height="20px"
+                  x:Name="Password"
+                 Width="300px"
                  ></TextBox>
 
-        <Button Width="100px"
-                Height="20px" Margin="350,291,350,123"
-                Command="{Binding LoginCmd}">
+        <Button  
+            Width="100px"
+                Height="20px"
+                Click="Button_Click">
                 Bejelentkezés
         </Button>
-    </Grid>
+
+        <TextBlock x:Name="ResponseText"></TextBlock>
+    </StackPanel>
 </Window>
