@@ -11,11 +11,12 @@ namespace PizzaProjekt.Model
     public class User
     {
 
-
+        private int _id;
         private string _name, _password;
 
         public User(string name, string password)
         {
+            _id = 0;
             _name = password;
             _password = password;
         }

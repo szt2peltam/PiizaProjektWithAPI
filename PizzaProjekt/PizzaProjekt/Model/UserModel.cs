@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Models
+namespace PizzaProjekt.Model
 {
-    public class PasswordModel
+    internal class UserModel
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
         public string Password { get; set; }
-
     }
 }
