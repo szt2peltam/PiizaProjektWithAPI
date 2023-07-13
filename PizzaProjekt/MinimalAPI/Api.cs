@@ -14,12 +14,16 @@ public static class Api
         // Mapping endpoints
 
         app.MapGet("/Users", GetUsers);
+        app.MapGet("/Order", GetPizzas);
         app.MapGet("/Users/{id}", GetUser);
+        app.MapGet("/Order/{id}", GetPizza);
         app.MapPost("/Users", InsertUser);
+        app.MapPost("/Order", InsertOrder);
         app.MapGet("/Password/{id}", GetPasswordFromId);
         app.MapGet("/Name/{name}", GetIdFromName);
         app.MapPut("/Users", UpdateUser);
         app.MapDelete("/Users", DeleteUser);
+        app.MapDelete("/Order", DeletePizza);
 
 
     }
@@ -29,6 +33,18 @@ public static class Api
         try
         {
             return Results.Ok(await data.GetUsers());
+        }
+        catch (Exception ec)
+        {
+
+            return Results.Problem(ec.Message);
+        }
+    }
+    private static async Task<IResult> GetPizzas(IPizzaData data)
+    {
+        try
+        {
+            return Results.Ok(await data.GetPizzas());
         }
         catch (Exception ec)
         {
@@ -55,12 +71,45 @@ public static class Api
             return Results.Problem(ex.Message); ;
         }
     }
-    private static async Task<IResult> InsertUser(UserModel user, IUserData data)
+    private static async Task<IResult> GetPizza(int id, IPizzaData data)
+    {
+        try
+        {
+
+            var results = await data.GetPizza(id);
+            if(results == null)
+            {
+                return Results.NotFound();
+            }
+            return Results.Ok(results);
+        }
+        catch (Exception ex)
+        {
+
+            return Results.Problem(ex.Message); ;
+        }
+    }
+    private static async Task<IResult> InsertUser(LoginModel user, IUserData data)
     {
         try
         {
 
             await data.InsertUser(user);
+            return Results.Ok();
+        }
+        catch (Exception ex)
+        {
+
+            return Results.Problem(ex.Message); ;
+        }
+    }
+
+    private static async Task<IResult> InsertOrder(OrderPizzaModel Order, IPizzaData data)
+    {
+        try
+        {
+
+            await data.InsertOrder(Order);
             return Results.Ok();
         }
         catch (Exception ex)
@@ -92,6 +141,20 @@ public static class Api
         try
         {
             await data.DeleteUser(id);
+            return Results.Ok();
+        }
+        catch (Exception ex)
+        {
+
+            return Results.Problem(ex.Message);
+        }
+    }
+
+    private static async Task<IResult> DeletePizza(int id, IPizzaData data)
+    {
+        try
+        {
+            await data.DeleteOrder(id);
             return Results.Ok();
         }
         catch (Exception ex)

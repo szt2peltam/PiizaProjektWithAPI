@@ -4,5 +4,5 @@ AS
 begin
 	SELECT Id
 	FROM dbo.[User]
-	WHERE Name = @Name;
+	WHERE Username = @Name;
 end

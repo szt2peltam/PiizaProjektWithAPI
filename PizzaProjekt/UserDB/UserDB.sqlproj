@@ -69,6 +69,11 @@
     <Build Include="dbo\storedProcedures\spUser_Update.sql" />
     <Build Include="dbo\storedProcedures\spUser_GetIndexByName.sql" />
     <Build Include="dbo\storedProcedures\spUser_GetPasswordFromIndex.sql" />
+    <Build Include="dbo\Tables\Orders.sql" />
+    <Build Include="dbo\storedProcedures\spOrders_GetAll.sql" />
+    <Build Include="dbo\storedProcedures\spOrders_Get.sql" />
+    <Build Include="dbo\storedProcedures\spOrders_Delete.sql" />
+    <Build Include="dbo\storedProcedures\spOrders_Insert.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment1.sql" />
@@ -76,5 +81,8 @@
   <ItemGroup>
     <None Include="UserDB.publish.xml" />
     <None Include="UserDB2.publish.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="UserDB.refactorlog" />
   </ItemGroup>
 </Project>

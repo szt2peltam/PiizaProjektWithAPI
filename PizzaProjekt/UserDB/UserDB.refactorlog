@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="8486d450-95f8-4891-9c75-c59a405d4e0e" ChangeDateTime="07/02/2023 17:16:57">
+    <Property Name="ElementName" Value="[dbo].[User].[Name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[User]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Username" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d2fc5537-e9d1-4d7b-9faf-8b014342d4ef" ChangeDateTime="07/12/2023 18:52:02">
+    <Property Name="ElementName" Value="[dbo].[Orders].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Orders]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="OrderId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7df5635d-4515-46a8-a1fb-2fee8c30cfda" ChangeDateTime="07/12/2023 18:58:20">
+    <Property Name="ElementName" Value="[dbo].[Orders].[Egg]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Orders]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="EggDB" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="551d7149-b988-49a4-9183-0e5771ae1f0d" ChangeDateTime="07/12/2023 19:06:28">
+    <Property Name="ElementName" Value="[dbo].[Orders].[Minced meat]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Orders]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MincedMeat" />
+  </Operation>
+</Operations>

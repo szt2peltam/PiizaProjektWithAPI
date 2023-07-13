@@ -9,7 +9,7 @@ namespace DataAccess.Data
         Task<PasswordModel?> GetPasswordByIndex(int index);
         Task<UserModel?> GetUser(int ID);
         Task<IEnumerable<UserModel>> GetUsers();
-        Task InsertUser(UserModel user);
+        Task InsertUser(LoginModel user);
         Task UpdateUser(UserModel user);
     }
 }

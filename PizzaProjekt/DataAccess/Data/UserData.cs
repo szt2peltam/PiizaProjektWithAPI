@@ -31,8 +31,8 @@ public class UserData : IUserData
         return results.FirstOrDefault();
     }
 
-    public Task InsertUser(UserModel user) =>
-        _db.SaveData("dbo.spUser_Insert", new { user.Name, user.Password });
+    public Task InsertUser(LoginModel user) =>
+        _db.SaveData("dbo.spUser_Insert", new { user.Username, user.Password });
 
 
     public Task UpdateUser(UserModel user) =>
