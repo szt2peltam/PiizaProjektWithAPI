@@ -22,13 +22,16 @@ namespace DataAccess.Data
             _db.LoadData<PizzaModel, dynamic>("dbo.spOrders_GetAll", new { });
 
 
-        public async Task<PizzaModel?> GetPizza(int UserID)
+        public async Task<IEnumerable< PizzaModel>> GetPizza(int UserID)
         {
             var results = await _db.LoadData<PizzaModel, dynamic>(
                 "dbo.spOrders_Get",
                 new { UserId = UserID });
 
-            return results.FirstOrDefault();
+
+            return results;
+
+            
         }
 
 

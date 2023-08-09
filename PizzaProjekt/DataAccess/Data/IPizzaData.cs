@@ -11,7 +11,7 @@ namespace DataAccess.Data
     {
 
         Task DeleteOrder(int ID);
-        Task<PizzaModel?> GetPizza(int ID);
+        Task<IEnumerable<PizzaModel>> GetPizza(int ID);
         Task<IEnumerable<PizzaModel>> GetPizzas();
         Task InsertOrder(OrderPizzaModel Order);
     }
