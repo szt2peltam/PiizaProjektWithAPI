@@ -15,8 +15,13 @@ public class UserModel
     public string SecondName { get; set; }
     public string BirthDate { get; set; }
     public string Gender { get; set; }
-    
 
+    public string Email { get; set; }
+    public string Telnum { get; set; }
+    public int PostCode { get; set; }
+    public int HouseNum { get; set; }
+    public string Street { get; set; }
+    public string City { get; set; }
 
 
 }
